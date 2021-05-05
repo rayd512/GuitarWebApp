@@ -45,3 +45,8 @@ img {
   width: auto;
   height: auto;
 }
+
+.carousel-caption {
+  background: rgba(51, 51, 51, 0.5);
+  filter: alpha(opacity=50);
+}
