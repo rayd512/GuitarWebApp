@@ -1,0 +1,30 @@
+<br>
+<br>
+<br>
+<br>
+<div style="width: 21.5em;margin:0 auto;">
+  <div class="card text-center" style="width: 18rem;">
+    <%= image_tag(@guitar.img, class:"card-img-top") %>
+    <div class="card-body">
+      <h5 class="card-title"><%= @guitar.brand + " " + @guitar.name %></h5>
+      <!-- <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p> -->
+    </div>
+  <!--   <ul class="list-group list-group-flush">
+      <li class="list-group-item">An item</li>
+      <li class="list-group-item">A second item</li>
+      <li class="list-group-item">A third item</li>
+    </ul>
+    <div class="card-body">
+      <a href="#" class="card-link">Card link</a>
+      <a href="#" class="card-link">Another link</a>
+    </div> -->
+  </div>
+  <div class="mx-auto">
+    <% if @guitar.user_id == current_user.id %>
+    <%= link_to 'Edit', edit_guitar_path(@guitar), class:"btn btn-primary"%>
+    <% end %>
+    <%= link_to 'Back', guitars_path, class:"btn btn-light" %>
+  </div>
+
+</div>
+
