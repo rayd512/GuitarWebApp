@@ -2,23 +2,45 @@
 	<br> <br>
 	<h1 id="title">Guitar Collection Tracker</h1>
 	<p id="slogan">Keep up with <strong>GAS</strong> (Guitar Acquisition Syndrome) </p>
-</div>
+  <br>
+  <h2>Check out other user's guitars</h2>
 
-<div id="carouselExampleSlidesOnly" class="carousel slide text-center" data-bs-ride="carousel">
-  <div class="carousel-indicators">
-    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
-    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
-  </div>
+</div>
+<div id="carouselExampleSlidesOnly" class="carousel-dark slide text-center" data-bs-ride="carousel">
   <div class="carousel-inner">
     <div class="carousel-item active">
-      <img src="https://i.imgur.com/U2hIQM5.jpg?1" alt="Guitar Collection 1">
+      <!-- <img src="https://i.imgur.com/U2hIQM5.jpg?1" alt="Guitar Collection 1"> -->
+      <% if @guitar.nil? %>
+      <%= image_tag "https://i.imgur.com/U2hIQM5.jpg?1" %>
+      <% else %>
+      <%= image_tag @guitar.img %>
+      <div class="carousel-caption d-none d-md-block">
+        <h3><strong><%= @user.name + "\'s"%></strong></h3>
+        <p><%= @guitar.brand + " " + @guitar.name %></p>
+      </div>
+      <% end %>
     </div>
     <div class="carousel-item">
-      <img src="https://happymag.tv/wp-content/uploads/2017/03/guitarshop-1.jpg" class="d-block w-100" alt="Guitar Collection 2">
+      <% if @guitar.nil? %>
+      <%= image_tag "https://happymag.tv/wp-content/uploads/2017/03/guitarshop-1.jpg" %>
+      <% else %>
+      <%= image_tag @guitar.img %>
+      <div class="carousel-caption d-none d-md-block">
+        <h3><strong><%= @user.name + "\'s"%></strong></h3>
+        <p><%= @guitar.brand + " " + @guitar.name %></p>
+      </div>
+      <% end %>
     </div>
     <div class="carousel-item">
-      <img src="https://live.staticflickr.com/163/368968709_bed83eb885_b.jpg" class="d-block w-100" alt="Guitar Collection 3">
+      <% if @guitar.nil? %>
+      <%= image_tag "https://live.staticflickr.com/163/368968709_bed83eb885_b.jpg" %>
+      <% else %>
+      <%= image_tag @guitar.img %>
+      <div class="carousel-caption d-none d-md-block">
+        <h3><strong><%= @user.name + "\'s"%></strong></h3>
+        <p><%= @guitar.brand + " " + @guitar.name %></p>
+      </div>
+      <% end %>
     </div>
   </div>
 </div>
