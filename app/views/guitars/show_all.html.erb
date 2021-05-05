@@ -15,7 +15,7 @@
       <th scope="col">Brand</th>
       <th scope="col">Name</th>
       <th scope="col">Serial</th>
-      <th colspan="1"></th>
+      <th scope="col">Owner</th>
     </tr>
   </thead>
 
@@ -26,6 +26,7 @@
         <td><%= guitar.name %></td>
         <td><%= guitar.brand %></td>
         <td><%= guitar.serial %></td>
+        <td><%= guitar.user.name %></td>
       </tr>
     <% end %>
   </tbody>
