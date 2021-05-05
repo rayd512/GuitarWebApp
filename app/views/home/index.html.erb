@@ -10,35 +10,38 @@
   <div class="carousel-inner">
     <div class="carousel-item active">
       <!-- <img src="https://i.imgur.com/U2hIQM5.jpg?1" alt="Guitar Collection 1"> -->
-      <% if @guitar.nil? %>
+      <% guitar = random_guitar %>
+      <% if guitar.nil? %>
       <%= image_tag "https://i.imgur.com/U2hIQM5.jpg?1" %>
       <% else %>
-      <%= image_tag @guitar.img %>
+      <%= image_tag guitar.img %>
       <div class="carousel-caption d-none d-md-block">
-        <h3><strong><%= @user.name + "\'s"%></strong></h3>
-        <p><%= @guitar.brand + " " + @guitar.name %></p>
+        <h3><strong><%= guitar.user.name + "\'s"%></strong></h3>
+        <p><%= guitar.brand + " " + guitar.name %></p>
       </div>
       <% end %>
     </div>
     <div class="carousel-item">
-      <% if @guitar.nil? %>
+      <%= guitar = random_guitar %>
+      <% if guitar.nil? %>
       <%= image_tag "https://happymag.tv/wp-content/uploads/2017/03/guitarshop-1.jpg" %>
       <% else %>
-      <%= image_tag @guitar.img %>
+      <%= image_tag guitar.img %>
       <div class="carousel-caption d-none d-md-block">
-        <h3><strong><%= @user.name + "\'s"%></strong></h3>
-        <p><%= @guitar.brand + " " + @guitar.name %></p>
+        <h3><strong><%= guitar.user.name + "\'s"%></strong></h3>
+        <p><%= guitar.brand + " " + guitar.name %></p>
       </div>
       <% end %>
     </div>
     <div class="carousel-item">
-      <% if @guitar.nil? %>
+      <%= guitar = random_guitar %>
+      <% if guitar.nil? %>
       <%= image_tag "https://live.staticflickr.com/163/368968709_bed83eb885_b.jpg" %>
       <% else %>
-      <%= image_tag @guitar.img %>
+      <%= image_tag guitar.img %>
       <div class="carousel-caption d-none d-md-block">
-        <h3><strong><%= @user.name + "\'s"%></strong></h3>
-        <p><%= @guitar.brand + " " + @guitar.name %></p>
+        <h3><strong><%= guitar.user.name + "\'s"%></strong></h3>
+        <p><%= guitar.brand + " " + guitar.name %></p>
       </div>
       <% end %>
     </div>
