@@ -3,8 +3,9 @@
 	<h1 id="title">Guitar Collection Tracker</h1>
 	<p id="slogan">Keep up with <strong>GAS</strong> (Guitar Acquisition Syndrome) </p>
   <br>
-  <h2>Check out other user's guitars</h2>
-
+  <% if !@guitar.nil? %>
+    <h2>Check out other user's guitars</h2>
+  <% end %>
 </div>
 <div id="carouselExampleSlidesOnly" class="carousel-dark slide text-center" data-bs-ride="carousel">
   <div class="carousel-inner">

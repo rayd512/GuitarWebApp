@@ -13,15 +13,13 @@ class GuitarsController < ApplicationController
   def show
   end
 
-  def search  
-    @guitars = Guitar.search(params[:search]).to_set
-    puts @guitars
+  def search
+    public_guitars = Guitar.where("public = ?", true)
+    @guitars = public_guitars.search(params[:search]).to_set
     user_results = User.search(params[:search])
     user_results.each do |user|
-      @guitars = @guitars.merge(user.guitars.to_set)
+      @guitars = @guitars.merge(user.guitars.where("public = ?", true).to_set)
     end
-    puts @guitars
-    # @guitars = [@guitars]
 
   end
 
