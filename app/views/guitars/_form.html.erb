@@ -11,41 +11,33 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= form.label :name %>
-    <%= form.text_field :name %>
+  <div class="field form-group">
+    <%= form.text_field :name, class:"form-control", placeholder:"Name" %>
   </div>
-
-  <div class="field">
-    <%= form.label :brand %>
-    <%= form.text_field :brand %>
+  <br>
+  <div class="field form-group">
+    <%= form.text_field :brand, class:"form-control", placeholder:"Brand" %>
   </div>
-
-  <div class="field">
-    <%= form.label :price %>
-    <%= form.text_field :price %>
+  <br>
+  <div class="field form-group">
+    <%= form.text_field :price, class:"form-control", placeholder:"Purchase Price" %>
   </div>
-
-  <div class="field">
-    <%= form.label :serial %>
-    <%= form.text_field :serial %>
+  <br>
+  <div class="field form-group">
+    <%= form.text_field :serial, class:"form-control", placeholder:"Serial #" %>
   </div>
-
-  <div class="field">
-    <%= form.label :img %>
-    <%= form.text_field :img %>
+  <br>
+  <div class="field form-group">
+    <%= form.text_field :img, class:"form-control", placeholder:"Image link \"https://...\"" %>
   </div>
-
-  <div class="field">
-    <%= form.label :public %>
+  <br>
+  <div class="field form-group">
+    <%= form.label :"Make available to public" %>
     <%= form.check_box :public %>
   </div>
-  
-  <div class="field">
-    <%= form.number_field :uid, id: :guitar_uid, value: current_user.id %>
-  </div>
-
+  <br>
   <div class="actions">
-    <%= form.submit %>
+    <%= form.submit "Add Guitar", class:"btn btn-primary" %>
   </div>
 <% end %>
+
