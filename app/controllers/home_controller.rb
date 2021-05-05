@@ -6,7 +6,8 @@ class HomeController < ApplicationController
 
   def random_guitar
   	if !Guitar.first.nil?
-  		guitar = Guitar.where("public = ?", true).find(Guitar.pluck(:id).sample)
+  		public_guitars = Guitar.where("public = ?", true)
+      guitar = public_guitars.find(public_guitars.pluck(:id).sample)
   	else
   		guitar = nil
   	end
