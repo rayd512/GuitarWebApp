@@ -30,10 +30,14 @@
         </li>
         <% end %>
       </ul>
-      <form class="d-flex">
-        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-        <button class="btn btn-light" type="submit">Search</button>
-      </form>
+      <!-- <div class="d-flex"> -->
+        <%= form_tag(search_page_path, :method => "get", :class => 'd-flex') do %>  
+          <%= search_field_tag :search, params[:search], placeholder: "Search", class:"form-control me-2" %>
+          <%= button_tag "Search", :class => 'btn btn-light',:name => nil%>
+        <% end %>
+<!--         <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+        <button class="btn btn-light" type="submit">Search</button> -->
+      <!-- </div> -->
     </div>
   </div>
 </nav>

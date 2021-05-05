@@ -1,6 +1,6 @@
 class GuitarsController < ApplicationController
   before_action :set_guitar, only: [:show, :edit, :update, :destroy ]
-  before_action :authenticate_user!, except: [:show_all]
+  before_action :authenticate_user!, except: [:show_all, :search]
   before_action :correct_user, only: [:edit, :update, :destroy]
 
   # GET /guitars or /guitars.json
@@ -11,6 +11,18 @@ class GuitarsController < ApplicationController
 
   # GET /guitars/1 or /guitars/1.json
   def show
+  end
+
+  def search  
+    @guitars = Guitar.search(params[:search]).to_set
+    puts @guitars
+    user_results = User.search(params[:search])
+    user_results.each do |user|
+      @guitars = @guitars.merge(user.guitars.to_set)
+    end
+    puts @guitars
+    # @guitars = [@guitars]
+
   end
 
   # GET /guitars/new
