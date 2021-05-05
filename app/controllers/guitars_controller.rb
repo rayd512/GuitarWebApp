@@ -19,7 +19,7 @@ class GuitarsController < ApplicationController
   end
 
   def show_all
-    @guitars = Guitar.all.where("public = 1")
+    @guitars = Guitar.all.where("public = ?", true)
   end
 
   # GET /guitars/1/edit
